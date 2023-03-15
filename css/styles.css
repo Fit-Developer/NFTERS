@@ -65,6 +65,9 @@ h5 {
 :root {
   --primary-color: #3d00b7;
   --secondary-color: #565656;
+  --success-color: #00ac4f;
+  --danger-color: #ff002e;
+  --sea-color: #14c8b0;
   --container-sm: 100%;
   --container-md: 992px;
   --container-lg: 1200px;
@@ -78,6 +81,10 @@ h5 {
   max-width: var(--container-lg);
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.relative {
+  position: relative;
 }
 
 .btn {
@@ -98,8 +105,20 @@ h5 {
   border: 2px solid var(--primary-color);
 }
 
+.text-primary {
+  color: var(--primary-color);
+}
+
 .text-secondary {
   color: var(--secondary-color);
+}
+
+.text-sea {
+  color: var(--sea-color);
+}
+
+.text-danger {
+  color: var(--danger-color);
 }
 
 .flex {
@@ -108,6 +127,10 @@ h5 {
 
 .flex-col {
   flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .items-center {
@@ -310,6 +333,74 @@ section.feature .grid {
   column-gap: 3rem;
 }
 
+section .collection {
+  margin-top: var(--section-top);
+}
+
+section .collection .collection-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+section .collection .collection-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section .collection .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+}
+
+section .collection .tag {
+  border: 1px solid var(--success-color);
+  color: var(--success-color);
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 500;
+}
+
+section .collection .verify {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+}
+
+section .top-collection-list {
+  /* height: 420px; */
+  /* border: 1px solid red; */
+  /* overflow-y: scroll; */
+}
+
+ol {
+  counter-reset: item;
+  list-style-type: none;
+  margin-top: 1.5rem;
+}
+li {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+li:nth-child(1) img {
+  padding-left: 6px;
+}
+li:before {
+  content: counter(item) "  ";
+  counter-increment: item;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+section .feature-collection {
+  margin-top: var(--section-top);
+}
+
 @media only screen and (max-width: 600px) {
   .container {
     max-width: var(--container-sm);
@@ -417,5 +508,9 @@ section.feature .grid {
   section.feature .grid {
     grid-template-columns: 1fr;
     row-gap: 3rem;
+  }
+
+  section .collection .grid {
+    grid-template-columns: 1fr;
   }
 }
