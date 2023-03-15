@@ -398,6 +398,8 @@ ol li:before {
 
 section .feature-collection {
   margin-top: var(--section-top);
+  background-color: var(--bg-color);
+  padding: 3rem 0;
 }
 
 section .feature-collection .grid {
