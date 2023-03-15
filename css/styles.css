@@ -19,6 +19,11 @@ body {
   font-family: "DM Sans", sans-serif;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* font optimize */
 @font-face {
   font-family: "Integral CF";
@@ -370,27 +375,21 @@ section .collection .verify {
   top: -5px;
 }
 
-section .top-collection-list {
-  /* height: 420px; */
-  /* border: 1px solid red; */
-  /* overflow-y: scroll; */
-}
-
 ol {
   counter-reset: item;
   list-style-type: none;
   margin-top: 1.5rem;
 }
-li {
+ol li {
   display: flex;
   align-items: center;
   padding: 1rem 0;
   border-bottom: 1px solid #f0f0f0;
 }
-li:nth-child(1) img {
+ol li:nth-child(1) img {
   padding-left: 6px;
 }
-li:before {
+ol li:before {
   content: counter(item) "  ";
   counter-increment: item;
   font-size: 1.5rem;
@@ -398,6 +397,17 @@ li:before {
 }
 
 section .feature-collection {
+  margin-top: var(--section-top);
+}
+
+section .feature-collection .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 2rem;
+  gap: 1.5rem;
+}
+
+section .create-sell {
   margin-top: var(--section-top);
 }
 
@@ -511,6 +521,9 @@ section .feature-collection {
   }
 
   section .collection .grid {
+    grid-template-columns: 1fr;
+  }
+  section .feature-collection .grid {
     grid-template-columns: 1fr;
   }
 }
