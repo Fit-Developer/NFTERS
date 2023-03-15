@@ -58,12 +58,18 @@ h4 {
   font-size: 28px;
 }
 
+h5 {
+  font-size: 23px;
+}
+
 :root {
   --primary-color: #3d00b7;
   --secondary-color: #565656;
   --container-sm: 100%;
   --container-md: 992px;
   --container-lg: 1200px;
+  --section-top: 100px;
+  --bg-color: rgba(217, 224, 236, 0.2);
 }
 
 /* assign variable global class */
@@ -110,6 +116,11 @@ h4 {
 
 .space-sm {
   gap: 0.5rem;
+}
+
+.space-y {
+  display: flex;
+  flex-direction: column;
 }
 
 .gap-1 {
@@ -185,7 +196,7 @@ section .hero {
   display: grid;
   grid-template-columns: 1.25fr 1fr;
   height: 100%;
-  margin-top: 100px;
+  margin-top: var(--section-top);
 }
 
 .hero .column-1 {
@@ -283,9 +294,20 @@ section .hero {
   z-index: 4;
 }
 
-section .feature {
-  margin-top: 12rem;
-  background-color: var(--secondary-color);
+section.feature {
+  margin-top: var(--section-top);
+  background-color: var(--bg-color);
+  padding: 5rem 0;
+}
+
+section.feature h1 {
+  font-size: 1.75rem;
+}
+
+section.feature .grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr;
+  column-gap: 3rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -364,12 +386,14 @@ section .feature {
     transform: translateX(-50%);
     top: 5rem;
   }
+
   .hero .column-2 .auction {
     left: 50%;
     transform: translateX(-50%);
     top: 50%;
     z-index: 10;
   }
+
   .hero .column-1 h1 {
     font-size: 33px;
   }
@@ -383,5 +407,15 @@ section .feature {
 
   header nav .close-icon {
     display: none;
+  }
+
+  section.feature h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  section.feature .grid {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
   }
 }
