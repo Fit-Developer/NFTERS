@@ -283,6 +283,11 @@ section .hero {
   z-index: 4;
 }
 
+section .feature {
+  margin-top: 12rem;
+  background-color: var(--secondary-color);
+}
+
 @media only screen and (max-width: 600px) {
   .container {
     max-width: var(--container-sm);
@@ -291,7 +296,17 @@ section .hero {
   /* header nav .menus, */
   header nav .actions {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 15;
   }
+
+  /* header nav .actions .search {
+    display: none;
+  } */
 
   header nav .menus {
     position: absolute;
